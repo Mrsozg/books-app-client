@@ -24,10 +24,11 @@ var bookView = {};
 Book.loadAll = rows =>  Book.all = row.sort((a,b) => b.title - a.title).map(book => new Book(book));
 
 Book.fetchAll = callback => {
-  $.get('/api/v1/books')
-    .then(results => {
-      Book.loadAll(results);
-      callback();
+  $.get(`{__API_URL__ }/api/v1/books`)
+    .then(Book.loadAll=> {
+    .then(callback)
+      .callback()
+      .catch(errorCallback)
     })
 };
 
