@@ -2,12 +2,10 @@
 var app = app || {};
 
 
-//Define a static property on Book called all, and assign an empty array as it's value.
-//Define a static method on Book called loadAll which takes rows as an argument, and sorts rows by title, maps //over rows to create an array of Book instances, and then assigns the new array of Books to Book.all.
 (function (module) {
   function Book(rawDataObj) {
 
-    Object.keys(rawDataObj).forEach(key =>{this[key] = rawDataObj[key]},this);
+    Object.keys(rawDataObj).forEach(key => { this[key] = rawDataObj[key]}, this);
   }
   Book.all = [];
 
@@ -16,5 +14,15 @@ var app = app || {};
 
   return template(this);
 };
+
+Book.loadAll = rawData => {
+  rawData.sort((a,b) => (new Title(b.title)) - (new title(a.title)))
+
+  /* OLD forEach():
+rawData.forEach(articleObject => Article.all.push(new Article(articleObject)));
+*/
+  Book.all = rawData.map(bookObject => new Book(bookObject));
+};
+
   module.Book = Book;
 })(app);
