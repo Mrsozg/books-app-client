@@ -1,11 +1,17 @@
 'use strict';
 var app = app || {};
 
+var bookView = {};
 
 (function (module) {
+  var __API_URL__ = 'http://localhost:3000';
+  function errorCallback(err){
+    console.error(err);
+    module.errorView.initErrorPage(err);
+  }
   function Book(rawDataObj) {
 
-    Object.keys(rawDataObj).forEach(key => { this[key] = rawDataObj[key]}, this);
+    Object.keys(rawDataObj).map(key => this[key] = rawDataObj[key]}, this);
   }
   Book.all = [];
 
@@ -15,13 +21,15 @@ var app = app || {};
   return template(this);
 };
 
-Book.loadAll = rawData => {
-  rawData.sort((a,b) => (new Title(b.title)) - (new title(a.title)))
+Book.loadAll = rows =>  Book.all = row.sort((a,b) => b.title - a.title).map(book => new Book(book));
 
-  /* OLD forEach():
-rawData.forEach(articleObject => Article.all.push(new Article(articleObject)));
-*/
-  Book.all = rawData.map(bookObject => new Book(bookObject));
+Book.fetchAll = callback => {
+  $.get(`{__API_URL__ }/api/v1/books`)
+    .then(Book.loadAll=> {
+    .then(callback)
+      .callback()
+      .catch(errorCallback)
+    })
 };
 
   module.Book = Book;
