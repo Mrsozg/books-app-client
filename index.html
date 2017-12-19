@@ -3,9 +3,26 @@
   <head>
     <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="styles/icons.css">
+      <link rel="stylesheet" href="styles/base.css">
+      <link rel="stylesheet" href="styles/layout.css">
+      <link rel="stylesheet" href="styles/modules.css">
+      <link rel="stylesheet" href="styles/reset.css">
+      <link rel="icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/18607604?v=3&s=200">
     <title></title>
+    <script id="book-template" type="text/x-handlebars-template">
+    <section data-author="{{author}}">
+        <div>{{title}} : {{author}}</div>
+        <div>
+    </section>
+  </script>
   </head>
   <body>
-    <h1>hello world<h1>
+
   </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
+  <script src="scripts/article.js"></script>
+  <script src="scripts/articleView.js"></script>
 </html>
