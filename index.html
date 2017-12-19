@@ -10,14 +10,27 @@
       <link rel="stylesheet" href="styles/reset.css">
       <link rel="icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/18607604?v=3&s=200">
     <title></title>
-    <script id="book-list-template" type="text/x-handlebars-template">
-    <section data-author="{{author}}">
-        <div>{{title}} : {{author}}</div>
-        <div>
+    <script id="error-template" type="text/x-handlebars-template">
+       <h3>oops somethings went wrong</h3>
+       <p>{{status}}:{{statusText}}</p>
     </section>
   </script>
+
+  <script id="book-list-template" type="text/x-handlebars-template">
+      <li class ="book_item" data-bookid={{book_id}}>
+      <div class = "book_container">
+        <img src="{{image_url}}">
+        <div>
+          <h2>{{title}}</h2>
+          <p>{{author}}</p>
+        </div>
+      </div>
+  </section>
+</script>
   </head>
   <body>
+    <header>
+    </header>
 
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
