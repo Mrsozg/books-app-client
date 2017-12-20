@@ -23,11 +23,15 @@ var app = app || {};
 
   Book.all = [];
   Book.loadAll = rows => Book.all = rows.sort((a, b) => a.title - b.title).map(book => new Book(book));
-  Book.fetchAll = callback =>
+  Book.fetchAll = callback =>{
     $.get(`${__API_URL__}/api/v1/books`)
     .then(Book.loadAll)
     .then(callback)
     .catch(errorCallback)
+  }
+  Book.fetchOne = callback =>{
+    $.get(`${__API_URL__}/api/v1/books:id`)
 
+  };
   module.Book = Book;
 })(app)
