@@ -14,4 +14,4 @@ var app = app || {};
   module.bookView = bookView;
 })(app)
 
-$(() => app.Book.fetchAll(app.bookView.initIndexPage))= 1;
+$(() => app.Book.fetchAll(app.bookView.initIndexPage));
