@@ -11,6 +11,11 @@ var app = app || {};
     module.Book.all.map(book => $('#book-list').append(book.toHtml()));
     $('#book-count').append(module.Book.all.length);
   };
+  bookView.initBookPage = function (err) {
+    $('.container').hide();
+    $('.detail-view').show();
+    module.Book.all.map(book => $('#book-list').append(book.toHtml()));
+  };
 
   module.bookView = bookView;
 })(app)
