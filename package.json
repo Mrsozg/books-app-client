@@ -1,7 +1,7 @@
 {
   "name": "books-app-client",
   "version": "1.0.0",
-  "description": "",
+  "description": "# Project Name",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,7 +19,9 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "nodemon": "^1.14.0",
     "pagejs": "0.0.1-alpha",
     "pg": "^7.4.0"
-  }
+  },
+  "devDependencies": {}
 }
