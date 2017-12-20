@@ -9,9 +9,10 @@ var app = app || {};
     $('.container').hide();
     $('.book-view').show();
     module.Book.all.map(book => $('#book-list').append(book.toHtml()));
+    $('#book-count').append(module.Book.all.length);
   };
 
   module.bookView = bookView;
 })(app)
 
-$(() => app.Book.fetchAll(app.bookView.initIndexPage))= 1;
+$(() => app.Book.fetchAll(app.bookView.initIndexPage));
