@@ -1,36 +1,32 @@
-'use strict';
+'use strict'
+
 var app = app || {};
 
-var bookView = {};
-
-(function (module) {
+(function(module) {
   var __API_URL__ = 'http://localhost:3000';
-  function errorCallback(err){
+
+  function errorCallback(err) {
     console.error(err);
     module.errorView.initErrorPage(err);
-  }
-  function Book(rawDataObj) {
+  };
 
-    Object.keys(rawDataObj).map(key => this[key] = rawDataObj[key]}, this);
-  }
-  Book.all = [];
+  function Book(rawBookObj) {
+    Object.keys(rawBookObj).map(key => this[key] = rawBookObj[key]);
+  };
 
   Book.prototype.toHtml = function() {
-  var template = Handlebars.compile($('#book-list-template').text());
+    // let template = Handlebars.compile($('#book-list-template').text())
+    // return template(this)
+    return Handlebars.compile($('#book-list-template').text())(this);
+  };
 
-  return template(this);
-};
-
-Book.loadAll = rows =>  Book.all = row.sort((a,b) => b.title - a.title).map(book => new Book(book));
-
-Book.fetchAll = callback => {
-  $.get(`{__API_URL__ }/api/v1/books`)
-    .then(Book.loadAll=> {
+  Book.all = [];
+  Book.loadAll = rows => Book.all = rows.sort((a, b) => a.title - b.title).map(book => new Book(book));
+  Book.fetchAll = callback =>
+    $.get(`${__API_URL__}/api/v1/books`)
+    .then(Book.loadAll)
     .then(callback)
-      .callback()
-      .catch(errorCallback)
-    })
-};
+    .catch(errorCallback)
 
   module.Book = Book;
-})(app);
+})(app)

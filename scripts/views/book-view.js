@@ -1,10 +1,17 @@
+'use strict'
+
 var app = app || {};
-var bookView = {};
 
 (function (module) {
-    bookView.initIndexPage = () => {
+  const bookView = {}
 
+  bookView.initIndexPage = function (err) {
+    $('.container').hide();
+    $('.book-view').show();
+    module.Book.all.map(book => $('#book-list').append(book.toHtml()));
+  };
 
-     };
-    module.Book = Book;
-})(app);
+  module.bookView = bookView;
+})(app)
+
+$(() => app.Book.fetchAll(app.bookView.initIndexPage))= 1;
