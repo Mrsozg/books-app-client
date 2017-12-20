@@ -28,6 +28,9 @@
   .icon-twitter:before {
     content: "\ea96";
   }
+  .icon-menu:before {
+    content: “\e902”;
+  }
   .icon-github:before {
     content: "\eab0";
   }
