@@ -39,17 +39,3 @@ var app = app || {};
 
   module.Book = Book;
 })(app)
-
-$( document ).ready(function() {
-  
-  $( ".menu" ).hide();
-  $( ".hamburger" ).click(function() {
-  $( ".menu" ).slideToggle( "slow", function() {
-  $( ".hamburger" ).hide();
-  });
-  });
-  
-  $( ".menu" ).slideToggle( "slow", function() {
-  $( ".hamburger" ).show();
-  });
-  });
