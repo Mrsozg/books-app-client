@@ -30,12 +30,26 @@ var app = app || {};
     .then(callback)
     .catch(errorCallback)
   }
-  Book.fetchOne = callback =>{
+  Book.fetchOne = (id, callback) =>{
     $.get(`${__API_URL__}/api/v1/books/${id}`)
-    then(Book.loadAll)
+    .then(Book.loadAll)
     .then(callback)
     .catch(errorCallback)
   };
 
   module.Book = Book;
 })(app)
+
+$( document ).ready(function() {
+  
+  $( ".menu" ).hide();
+  $( ".hamburger" ).click(function() {
+  $( ".menu" ).slideToggle( "slow", function() {
+  $( ".hamburger" ).hide();
+  });
+  });
+  
+  $( ".menu" ).slideToggle( "slow", function() {
+  $( ".hamburger" ).show();
+  });
+  });

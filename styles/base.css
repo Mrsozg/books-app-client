@@ -28,3 +28,18 @@ body {
 .main-nav{
   background-color: white;
 }
+
+.icon-menu {
+  visibility: visible;
+}
+img{
+  width: 100%;
+}
+
+.icon-menu:before {
+  content: “\e902”;
+}
+
+.icon-link:before {
+	content: "\e903";
+}
