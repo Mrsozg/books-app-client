@@ -24,9 +24,15 @@ body {
     width: 100%;
     background-color: #444;
   }
+  .form-view-container{
+    width :100%;
+  }
 
 .main-nav{
   background-color: white;
+}
+.add-book{
+  width :100%;
 }
 
 /* .icon-menu {
