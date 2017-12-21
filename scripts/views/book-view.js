@@ -10,7 +10,7 @@ var app = app || {};
     $('.book-view').show();
     module.Book.all.map(book => $('#book-list').append(book.toHtml('book-list-template')));
     $('#book-count').append(module.Book.all.length);
-  } 
+  }
 
   bookView.initDetailPage = (id, callback) =>{
     $('.container').hide();
@@ -19,5 +19,8 @@ var app = app || {};
     module.Book.all.map(book => $('#detail-desc').append(book.toHtml('book-desc-template')));
 
   }
+
+
+
   module.bookView = bookView;
 })(app)
