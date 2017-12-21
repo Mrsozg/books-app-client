@@ -30,7 +30,7 @@ var app = app || {};
     .then(callback)
     .catch(errorCallback)
   }
-  Book.fetchOne = callback =>{
+  Book.fetchOne = (id, callback) =>{
     $.get(`${__API_URL__}/api/v1/books/${id}`)
     .then(Book.loadAll)
     .then(callback)
