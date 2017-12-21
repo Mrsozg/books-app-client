@@ -3,8 +3,8 @@
 var app = app || {};
 
 (function(module) {
-  // var __API_URL__ = 'http://localhost:3000';
-  var __API_URL__ = 'https://ob-jj-booklist.herokuapp.com';
+  var __API_URL__ = 'http://localhost:3000';
+  //var __API_URL__ = 'https://ob-jj-booklist.herokuapp.com';
 
   function errorCallback(err) {
     console.error(err);
@@ -15,18 +15,15 @@ var app = app || {};
     Object.keys(rawBookObj).map(key => this[key] = rawBookObj[key]);
   };
 
-  Book.prototype.toHtml = function() {
+  Book.prototype.toHtml = function(templateId) {
     // let template = Handlebars.compile($('#book-list-template').text())
     // return template(this)
-    return Handlebars.compile($('#book-list-template').text())(this);
+    return Handlebars.compile($(`#{templateId}`).text())(this);
   };
 
   Book.all = [];
-  Book.allBook =[]
-  Book.oneBook =[]
+
   Book.loadAll = rows => Book.all = rows.sort((a, b) => a.title - b.title).map(book => new Book(book));
-  Book.loadAllBook = rows => Book.allBook = rows.sort((a, b) => a.title - b.title).map(book => new Book(book));
-  Book.loadOneBook = rows => Book.OneBook =  new Book(book);
   Book.fetchAll = callback =>{
     $.get(`${__API_URL__}/api/v1/books`)
     .then(Book.loadAll)
@@ -35,16 +32,10 @@ var app = app || {};
   }
   Book.fetchOne = callback =>{
     $.get(`${__API_URL__}/api/v1/books/${id}`)
-    then(Book.loadOneBook)
+    then(Book.loadAll)
     .then(callback)
     .catch(errorCallback)
   };
-  Book.fetchAllData = callback =>{
-    $.get(`${__API_URL__}/api/v1/books`)
-    .then(Book.loadAllBook)
-    .then(callback)
-    .catch(errorCallback)
-  }
 
   module.Book = Book;
 })(app)
