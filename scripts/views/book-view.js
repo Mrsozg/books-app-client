@@ -20,7 +20,13 @@ var app = app || {};
 
   }
 
+  bookView.initAddBookPage = (id, callback) =>{
+    $('.container').hide();
+    $('#detail-desc').empty();
+    $('.form-view').show();
+    book => $('.add-book').append(book.toHtml('add-book-template'));
 
+  }
 
   module.bookView = bookView;
 })(app)
