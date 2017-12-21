@@ -25,7 +25,7 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.hamburger{
+/* .hamburger{
 	background:none;
 	position:absolute;
 	top:0;
@@ -39,7 +39,7 @@
 	cursor:pointer;
 	outline:none;
 	z-index:10000000000000;
- }
+ } */
 
  /* .menu{z-index:1000000; font-weight:bold; font-size:0.8em; width:100%; background:#f1f1f1 ;  position:absolute; text-align:center; font-size:12px;}
  .menu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
@@ -50,9 +50,9 @@
  .menu a{text-decoration:none; color:#666;}
  .menu a:hover{text-decoration:none; color:#666;}
   */
- .glyphicon-home{
+ /* .glyphicon-home{
 	color:white;
 	font-size:1.5em;
 	margin-top:5px;
 	margin:0 auto;
- }
+ } */
