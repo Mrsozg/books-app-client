@@ -14,7 +14,7 @@ var app = app || {};
   bookView.initBookPage = function (err) {
     $('.container').hide();
     $('.detail-view').show();
-    module.Book.all.map(book => $('#book-list').append(book.toHtml()));
+    module.Book.allBook.map(book => $('#book-list').append(book.toHtml()));
   };
 
   module.bookView = bookView;
