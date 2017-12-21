@@ -5,12 +5,12 @@ body {
     width: 100%;
     position: relative;
   }
-  
+
   main {
     max-width: 100%;
     margin: 1vw auto;
   }
-  
+
   header {
     position: fixed;
     z-index: 99;
@@ -19,17 +19,12 @@ body {
     width: 100%;
     top: 0;
   }
-  
+
   footer {
     width: 100%;
     background-color: #444;
   }
 
-  .icon-menu {
-    visibility: visible;
-    display: inline-block;
-  }
-  img{
-    width: 100%;
-  }
- }
+.main-nav{
+  background-color: white;
+}
