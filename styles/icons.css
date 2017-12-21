@@ -9,33 +9,24 @@
   font-style: normal;
 }
 
-[class^=“icon-“], [class*=" icon-"] {
-  font-family: 'icomoon';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 2;
-  color:red;
-  text-decoration:none;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-.icon-menu:before {
-  content: “\e902”;
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+  color:grey;
+	text-decoration:none;
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
-  .icon-mail2:before {
-    content: "\ea84";
-  }
-  .icon-twitter:before {
-    content: "\ea96";
-  }
-  .icon-github:before {
-    content: "\eab0";
-  }
-  .icon-linkedin2:before {
-    content: "\eaca";
-  }
+.icon-menu:before{
+	content: "\e902";
+}
+.icon-link:before {
+	content: "\e903";
+}
