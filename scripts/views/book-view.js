@@ -20,11 +20,9 @@ var app = app || {};
 
   }
 
-  bookView.initAddBookPage = (id, callback) =>{
+  bookView.initAddBookPage = () =>{
     $('.container').hide();
-    $('#detail-desc').empty();
     $('.form-view').show();
-    book => $('.add-book').append(book.toHtml('add-book-template'));
 
   }
 
