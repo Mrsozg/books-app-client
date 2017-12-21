@@ -22,7 +22,7 @@ var app = app || {};
 
   bookView.initAddBookPage = () =>{
     $('.container').hide();
-    $('.form-view').show();
+    $('.form-view-container').show();
 
   }
 
