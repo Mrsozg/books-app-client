@@ -41,18 +41,6 @@
       </div>
   </script>
 
-  <script type="text/x-handlebars-template" id="add-book-template">
-    <div class="new-book-container">
-        <input placeholder="title" id="book-title" type="text" required>
-        <input placeholder="author" id="book-author" type="text" required>
-        <input placeholder="isbn" id="isbn" type="text" required>
-        <input placeholder="image-url" id="image-url" type="url" required>
-        <input placeholder="description" id="book-description" type="text" required>
-        <button type="button" id="add-button"><a href="/detail-desc">Submit</a></button>
-      </div>
-    </div>
-</script>
-
 </head>
 <body>
   <header class="site-header clearfix">
@@ -66,8 +54,8 @@
     </section>
     <section class=“menu”>
         <ul>
-          <a href="#book-list"><li>View All Book</li></a>
-          <a href="#add-book"><li>Add A New Book</li></a>
+          <a href="/allbook"><li>View All Book</li></a>
+          <a href="/form"><li>Add A New Book</li></a>
         </ul>
 
     </section>
@@ -76,12 +64,12 @@
   <section class="form-view container">
        <h1>Add a new book</h1>
        <form id="add-book">
-       <!-- <input placeholder="title" id="book-title" type="text" required>
+        <input placeholder="title" id="book-title" type="text" required>
        <input placeholder="author" id="book-author" type="text" required>
        <input placeholder="isbn" id="isbn" type="text" required>
        <input placeholder="image-url" id="image-url" type="url" required>
        <input placeholder="description" id="book-description" type="text" required>
-       <button type="button" id="add-button"><a href="/detail-desc">Submit</a></button> -->
+       <button type="button" id="add-button">Submit</button>
       </form>
      </section>
     <section class="error-view container">
