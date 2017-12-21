@@ -16,8 +16,6 @@ var app = app || {};
   };
 
   Book.prototype.toHtml = function(templateId) {
-    // let template = Handlebars.compile($('#book-list-template').text())
-    // return template(this)
     return Handlebars.compile($(`#${templateId}`).text())(this);
   };
 
