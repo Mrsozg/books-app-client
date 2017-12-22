@@ -12,8 +12,8 @@ body {
   }
 
   header {
-    position: fixed;
-    z-index: 99;
+    /* position: fixed; */
+    /* z-index: 99; */
     background-color: #444;
     padding: 1.5vw 0;
     width: 100%;
@@ -28,9 +28,9 @@ body {
     width :100%;
   }
 
-.main-nav{
+/* .main-nav{
   background-color: white;
-}
+} */
 .add-book{
   width :100%;
 }
@@ -49,3 +49,6 @@ img{
 .icon-link:before {
 	content: "\e903";
 } */
+form{
+top 50%;
+}
