@@ -3,8 +3,8 @@
 var app = app || {};
 
 (function(module) {
-  //var __API_URL__ = 'http://localhost:3000';
-  var __API_URL__ = 'https://ob-jj-booklist.herokuapp.com';
+  var __API_URL__ = 'http://localhost:3000';
+  //var __API_URL__ = 'https://ob-jj-booklist.herokuapp.com';
 
   function errorCallback(err) {
     console.error(err);
@@ -27,12 +27,20 @@ var app = app || {};
     .then(Book.loadAll)
     .then(callback)
     .catch(errorCallback)
-  }
+  };
   Book.fetchOne = (id, callback) =>{
     $.get(`${__API_URL__}/api/v1/books/${id}`)
     .then(Book.loadAll)
     .then(callback)
     .catch(errorCallback)
+  };
+
+  Book.prototype.create = function(callback){
+    console.log(this.author);
+    $.post(`${__API_URL__}/api/v1/books`,{author:this.author, title:this.title, isbn:this.isbn,image_url:this.image_url, description:this.description})
+    .then(data=> {
+      if (callback) callback();
+    })
   };
 
   module.Book = Book;
