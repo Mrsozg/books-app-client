@@ -1,21 +1,19 @@
-# 12: Client-side Routing w/ PageJS
+# Middleware
 
 **Author**: Ozge and Jordan
 **Version**: 1.1.0 (increment the patch/fix version number up if you make more commits past your first submission)
 
 ## Overview
-<!-- We are trying to use PageJS to create a single page application. Meaning we want all our content to be under one html, but we want to view one piece of content while hiding the others, then as we navigate, we want to remain on the same page, but have our content filtered based on what we are trying to do-->
+<!-- This app gives you book information and allows you to submit new books on a single page. -->
 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+<!-- understand how databases work and how to use heroku.  -->
 
 ## Architecture
-<!-- We are using a client to display our content and a server to put and get requests from a database. We are using JavaScript, HTML, CSS, nodejs, express, pagejs, pg, and SQL. -->
+<!-- JavaScript, HTML, CSS, jQeury, Handlebars, Expressjs. -->
 
 ## Change Log
-<!-- Wed Dec 20 13:21:13 2017 - Tried to work on styling
-Wed Dec 20 12:27:08 2017 - Worked on hamburger menu
-Wed Dec 20 12:26:29 2017 - Worked on first user story
-Wed Dec 20 10:28:41 2017 - Fixed merge
-Wed Dec 20 10:26:13 2017 - Added CSS
+<!-- UserStory 2. Add an endpoint for a post request. Create a new static method to interact with book model. Create a form view container for index.html. 
+    UserStory 3. Add an endpoint that will catch any other request to your API and return user home.
+## Credits and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
