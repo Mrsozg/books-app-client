@@ -7,9 +7,10 @@ var app = app || {};
 
   bookView.initIndexPage = () => {
     $('.container').hide();
-    $('#detail-desc').empty();
+    $('#book-list').empty();
     $('.book-view').show();
     module.Book.all.map(book => $('#book-list').append(book.toHtml('book-list-template')));
+    $('#book-count').empty();
     $('#book-count').append(module.Book.all.length);
   }
 
@@ -18,34 +19,25 @@ var app = app || {};
     $('#detail-desc').empty();
     $('.detail-view').show();
     module.Book.all.map(book => $('#detail-desc').append(book.toHtml('book-desc-template')));
-
   }
-
+  
   bookView.initAddBookPage = () => {
     $('.container').hide();
-    $('#detail-desc').empty();
+    $('#bookform')[0].reset();
     $('.form-view-container').show();
-    $('#add-book').on('submit', module.bookView.submit)
+    $('#bookform').on('submit', module.bookView.submit)
   }
-
-  bookView.submit = () =>{
-    console.log("Test");
-    app.bookView.initIndexPage;
-  }
-
 
   bookView.submit = event => {
     event.preventDefault();
-    var book = new module.Book({
-      title: $('#book-title').val(),
-      author: $('#book-author').val(),
-      isbn: $('#isbn').val(),
-      image_url: $('#image-url').val(),
-      description: $('#description').val()
-    });
-    book.create();
+    var book = {
+      title: event.target.title.value,
+      author: event.target.author.value,
+      isbn: event.target.isbn.value,
+      image_url: event.target.image_url.value,
+      description: event.target.description.value
+    };
+    module.Book.create(book);
   }
-  
-  
   module.bookView = bookView;
 })(app)

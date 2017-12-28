@@ -28,6 +28,7 @@ var app = app || {};
     .then(callback)
     .catch(errorCallback)
   };
+  
   Book.fetchOne = (id, callback) =>{
     $.get(`${__API_URL__}/api/v1/books/${id}`)
     .then(Book.loadAll)
@@ -35,12 +36,9 @@ var app = app || {};
     .catch(errorCallback)
   };
 
-  Book.prototype.create = function(callback){
-    console.log(this.author);
-    $.post(`${__API_URL__}/api/v1/books`,{author:this.author, title:this.title, isbn:this.isbn,image_url:this.image_url, description:this.description})
-    .then(data=> {
-      if (callback) callback();
-    })
+  Book.create = book => {
+    $.post(`${__API_URL__}/api/v1/books`, book)
+    .then(()=> page('/'));
   };
 
   module.Book = Book;
