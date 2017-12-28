@@ -11,27 +11,6 @@
   <link rel="stylesheet" href="./styles/modules.css">
   <link rel="icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/18607604?v=3&s=200">
 
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./styles/reset.css">
-  <link rel="stylesheet" href="./styles/icons.css">
-  <link rel="stylesheet" href="./styles/base.css">
-  <link rel="stylesheet" href="./styles/layout.css">
-  <link rel="stylesheet" href="./styles/modules/error.css">
-  <link rel="stylesheet" href="./styles/modules/header.css">
-  <link rel="stylesheet" href="./styles/modules/book-main.css">
-  <link rel="stylesheet" href="./styles/modules/detail-main.css">
-  <link rel="stylesheet" href="./styles/modules/form-main.css">
-  <link rel="stylesheet" href="./styles/modules/admin-main.css">
-  <link rel="stylesheet" href="./styles/modules/footer.css">
-
--->
-
-
   <!-- Application Templates -->
   <script type="text/x-handlebars-template" id="error-template">
     <h3>Oops, something went wrong!</h3>
@@ -42,7 +21,7 @@
     <li class="book-item" data-bookid={{book_id}}>
       <div class="book-container">
         <img src={{image_url}}>
-        <div> <!-- <div class="book-overlay">-->
+        <div>
           <h2>{{title}}</h2>
           <p>{{author}}</p>
           <button type="button" id="bookid-{{book_id}}"><a href="/books/{{book_id}}">view details</a></button>
@@ -55,35 +34,15 @@
       <div class="book-container">
         <p>{{isbn}}</p>
         <img src={{image_url}}>
-        <h3>{{title}}</h3>
-        <p>{{author}}</p>
-        <p>{{description}}</p>
-         <button type="button" data-bookid={{book_id}} class="admin_page"  id="delete_{{book_id}}" a href="/">Delete</button>
-         <button id="update-btn" data-id={{book_id}} class="admin_page">update</button>
+          <h3>{{title}}</h3>
+          <p>{{author}}</p>
+          <p>{{description}}</p>
         </div>
+      </div>
   </script>
-
 
 </head>
 <body>
-  <!-- </head>
-  <body>
-    <header>
-      <div class="header-content">
-        <a href="/"><img src="http://www.bootcamps.in/wp-content/uploads/2015/06/code-fellows-shield.png" alt="logo"></a>
-        <h1>Code Fellows Books</h1>
-        <div class="icon-menu"></div>
-      </div>
-      <nav class="nav-menu">
-        <ul>
-          <li><a href="/">home</a></li>
-          <li class="admin"><a href="/books/new">add book</a></li>
-          <li class="admin"><a href="/books/search">search g-books</a></li>
-          <li><a href="/admin">login</a></li>
-        </ul>
-      </nav>
-    </header> -->
-
   <header class="site-header clearfix">
     <div class="header-content">
       <a href="/"><img src="http://www.bootcamps.in/wp-content/uploads/2015/06/code-fellows-shield.png" alt="logo"></a>
@@ -104,16 +63,15 @@
   <main>
     <section class="form-view-container container">
       <h1>Add a new book</h1>
-      <form   action="/" id="add-book" method="post">
-          <input placeholder="title" id="book-title" type="text" required></br>
-          <input placeholder="author" id="book-author" type="text" required></br>
-          <input placeholder="isbn" id="isbn" type="text" required></br>
-          <input placeholder="image-url" id="image-url" type="url" required></br>
-          <input placeholder="description" id="book-description" type="text" required></br>
-           <button type="submit" id="add-button"><a href="/"></a>Submit</a></button>
+      <form action="/" id="bookform" method="post">
+          <input placeholder="title" name="title" id="book-title" type="text" required></br>
+          <input placeholder="author" name="author" id="book-author" type="text" required></br>
+          <input placeholder="isbn" name="isbn" id="isbn" type="text" required></br>
+          <input placeholder="image-url" name ="image_url" id="image-url" type="url" required></br>
+          <input placeholder="description" name="description" id="book-description" type="text" required></br>
+          <button type="submit" id="add-book">Submit</button>
       </form>
     </section>
-
     <section class="error-view container">
       <h2 class="view-title">There be an issue, cap'n</h2>
       <section id="error-message"></section>
@@ -131,59 +89,6 @@
       <h2>Detail View</h2>
       <section id="detail-desc"></section>
     </section>
-
-    <!-- <section class="search-view container">
-        <form id="search-form">
-          <input type="text" name="title" placeholder="title">
-          <input type="text" name="author" placeholder="author">
-          <input type="text" name="isbn" placeholder="isbn">
-          <button type="submit">search</button>
-        </form>
-        <section class="search-detail"></section>
-      </section> -->
-
-<!-- 
-      <section class="search-results container">
-          <section>
-            <ul id="search-list"></ul>
-          </section>
-        </section>
-
-        <section class="create-view container">
-            <h2 class="view-title">add a new book</h2>
-            <form id="create-form">
-              <input type="text" name="title" placeholder="title">
-              <input type="text" name="author" placeholder="author">
-              <input type="text" name="isbn" placeholder="isbn">
-              <input type="text" name="image_url" placeholder="image_url">
-              <textarea name="description" placeholder="description" cols="30" rows="5"></textarea>
-              <button type="submit">submit</button>
-            </form>
-          </section>
-      
-          <section class="update-view container">
-            <h2 class="view-title">update a book</h2>
-            <form id="update-form">
-              <input type="text" name="title" placeholder="title">
-              <input type="text" name="author" placeholder="author">
-              <input type="text" name="isbn" placeholder="isbn">
-              <input type="text" name="image_url" placeholder="image_url">
-              <textarea name="description" placeholder="description" cols="30" rows="5"></textarea>
-              <button type="submit">update</button>
-            </form>
-          </section>
-      
-          <section class="admin-view container">
-            <h2 class="view-title">verify your passphrase</h2>
-            <form id="admin-form">
-              <input type="number" name="passphrase" placeholder="1234">
-              <button type="submit">verify</button>
-            </form>
-          </section> -->
-
-
-
-
 
     <div class="about-view ">
       <h2> About Me </h2>
@@ -213,7 +118,6 @@
   <script src="./scripts/models/book.js" type="text/javascript"></script>
   <script src="./scripts/views/book-view.js" type="text/javascript"></script>
   <script src="./scripts/views/error-view.js" type="text/javascript"></script>
-  <script src="./scripts/views/admin-view.js" type="text/javascript"></script>
   <script src="./scripts/views/routes.js" type="text/javascript"></script>
 
 </body>
