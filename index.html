@@ -72,6 +72,18 @@
           <button type="submit" id="add-book">Submit</button>
       </form>
     </section>
+    <section> class = "update-view container">
+        <h1>Update a  book</h1>
+        <form action="/" id="update-book" method="post">
+            <input placeholder="title" name="title"  type="text" required></br>
+            <input placeholder="author" name="author"  type="text" required></br>
+            <input placeholder="isbn" name="isbn" type="text" required></br>
+            <input placeholder="image-url" name ="image_url"  type="url" required></br>
+            <input placeholder="description" name="description" type="text" required></br>
+            <button type="submit" id="add-book">Update</button>
+        </form>
+      </section>
+
     <section class="error-view container">
       <h2 class="view-title">There be an issue, cap'n</h2>
       <section id="error-message"></section>
@@ -88,6 +100,8 @@
     <section class="detail-view container">
       <h2>Detail View</h2>
       <section id="detail-desc"></section>
+      <button type="submit"  data-id={{book_id}} id="delete">Delete</button>
+      <button type="submit"  data-id={{book_id}} id="update">Update</button>
     </section>
 
     <div class="about-view ">
