@@ -19,6 +19,10 @@ var app = app || {};
     $('#detail-desc').empty();
     $('.detail-view').show();
     module.Book.all.map(book => $('#detail-desc').append(book.toHtml('book-desc-template')));
+    $('#delete').on('click', function() {
+      module.Book.destroy($(this).data('id'));
+    });
+
   }
   
   bookView.initAddBookPage = () => {

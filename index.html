@@ -34,11 +34,12 @@
       <div class="book-container">
         <p>{{isbn}}</p>
         <img src={{image_url}}>
-          <h3>{{title}}</h3>
-          <p>{{author}}</p>
-          <p>{{description}}</p>
+        <h3>{{title}}</h3>
+        <p>{{author}}</p>
+        <p>{{description}}</p>
+        <button type="submit"  data-id={{book_id}} id="delete">Delete</button>
+        <button type="submit"  data-id={{book_id}} id="update">Update</button>
         </div>
-      </div>
   </script>
 
 </head>
@@ -72,7 +73,7 @@
           <button type="submit" id="add-book">Submit</button>
       </form>
     </section>
-    <section> class = "update-view container">
+    <section class="update-view container">
         <h1>Update a  book</h1>
         <form action="/" id="update-book" method="post">
             <input placeholder="title" name="title"  type="text" required></br>
@@ -100,8 +101,6 @@
     <section class="detail-view container">
       <h2>Detail View</h2>
       <section id="detail-desc"></section>
-      <button type="submit"  data-id={{book_id}} id="delete">Delete</button>
-      <button type="submit"  data-id={{book_id}} id="update">Update</button>
     </section>
 
     <div class="about-view ">
