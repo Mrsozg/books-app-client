@@ -57,6 +57,7 @@
         <ul>
           <li> <a href="/">View All Book </a></li>
           <li class="admin"><a href="/new"> Add A New Book </a> </li>
+          <li class="admin"><a href="/books/search">search books</a></li>
           <li><a href="/admin">login</a></li>
         </ul>
     </section>
@@ -84,6 +85,33 @@
             <button type="submit" id="update-book">Update</button>
         </form>
     </section>
+    <section class="search-view container">
+        <form id="search-form">
+          <input type="text" name="title" placeholder="title">
+          <input type="text" name="author" placeholder="author">
+          <input type="text" name="isbn" placeholder="isbn">
+          <button type="submit">search</button>
+        </form>
+        <section class="search-detail"></section>
+      </section>
+  
+      <section class="search-results container">
+        <section>
+          <ul id="search-list"></ul>
+        </section>
+      </section>
+  
+      <section class="create-view container">
+        <h2 class="view-title">add a new book</h2>
+        <form id="create-form">
+          <input type="text" name="title" placeholder="title">
+          <input type="text" name="author" placeholder="author">
+          <input type="text" name="isbn" placeholder="isbn">
+          <input type="text" name="image_url" placeholder="image_url">
+          <textarea name="description" placeholder="description" cols="30" rows="5"></textarea>
+          <button type="submit">submit</button>
+        </form>
+      </section>
 
     <section class="error-view container">
       <h2 class="view-title">There be an issue, cap'n</h2>
