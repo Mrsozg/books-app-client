@@ -6,7 +6,8 @@ page('/'
 );
 
 page('/books/:id'
-    ,(ctx,next) => app.Book.fetchOne(ctx, () => app.bookView.initDetailPage(ctx, next)));
+    ,(ctx,next) => app.Book.fetchOne(ctx, () => app.bookView.initDetailPage(ctx, next))
+    , (ctx, next) => app.adminView.verify(ctx, next));
 
 page ('/new', app.bookView.initAddBookPage);
 
