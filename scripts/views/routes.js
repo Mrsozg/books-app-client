@@ -13,8 +13,10 @@ page ('/new', app.bookView.initAddBookPage);
 
 page('/books/:id/update' 
     , (ctx, next) => app.Book.fetchOne(ctx, next)
-    , ctx => app.bookView.initUpdateFormPage(ctx))
+    , ctx => app.bookView.initUpdateFormPage(ctx));
 
-page('/admin', (ctx, next) => app.adminView.initAdminPage(ctx,next));    
+page('/admin', (ctx, next) => app.adminView.initAdminPage(ctx, next)); 
+
+page('/search', app.bookView.initSearchFormPage);   
 
 page();
