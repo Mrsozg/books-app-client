@@ -1,17 +1,18 @@
-'use strict'
+'use strict';
 
 var app = app || {};
 
 (function (module) {
   const bookView = {}
 
-  bookView.initIndexPage = () => {
+  bookView.initIndexPage = (ctx, next) => {
     $('.container').hide();
     $('#book-list').empty();
     $('.book-view').show();
     module.Book.all.map(book => $('#book-list').append(book.toHtml('book-list-template')));
     $('#book-count').empty();
     $('#book-count').append(module.Book.all.length);
+    next();
   }
 
   bookView.initDetailPage = (ctx, next) =>{

@@ -66,3 +66,7 @@
     font-size: 3vw;
     color: #d13227;
   }
+
+  .adminonly {
+    display: none;
+  }
