@@ -51,14 +51,13 @@
     <section class="heading-group-h1">
       <h1>Code Fellows Books</h1>
       <button class=“hamburger”>&#9776;</button>
-
     </section>
     <section class=“menu”>
         <ul>
           <li> <a href="/">View All Book </a></li>
           <li class="admin"><a href="/new"> Add A New Book </a> </li>
-          <li class="admin"><a href="/books/search">search books</a></li>
-          <li><a href="/admin">login</a></li>
+          <li class="admin"><a href="/search"> Search books</a> </li>
+          <li><a href="/admin">Login</a></li>
         </ul>
     </section>
   </header>
@@ -85,33 +84,35 @@
             <button type="submit" id="update-book">Update</button>
         </form>
     </section>
+    
     <section class="search-view container">
-        <form id="search-form">
+        <form action='/' id="search-form" method="post">
           <input type="text" name="title" placeholder="title">
           <input type="text" name="author" placeholder="author">
           <input type="text" name="isbn" placeholder="isbn">
           <button type="submit">search</button>
         </form>
         <section class="search-detail"></section>
-      </section>
+    </section>
   
-      <section class="search-results container">
-        <section>
-          <ul id="search-list"></ul>
-        </section>
+    <section class="search-results container">
+      <h2> Search Result</h2>
+      <section class="search-list">
+        <ul id="search-list"></ul>
       </section>
+    </section>
   
-      <section class="create-view container">
-        <h2 class="view-title">add a new book</h2>
-        <form id="create-form">
-          <input type="text" name="title" placeholder="title">
-          <input type="text" name="author" placeholder="author">
-          <input type="text" name="isbn" placeholder="isbn">
-          <input type="text" name="image_url" placeholder="image_url">
-          <textarea name="description" placeholder="description" cols="30" rows="5"></textarea>
-          <button type="submit">submit</button>
-        </form>
-      </section>
+    <section class="create-view container">
+      <h2 class="view-title">add a new book</h2>
+      <form id="create-form">
+        <input type="text" name="title" placeholder="title">
+        <input type="text" name="author" placeholder="author">
+        <input type="text" name="isbn" placeholder="isbn">
+        <input type="text" name="image_url" placeholder="image_url">
+        <textarea name="description" placeholder="description" cols="30" rows="5"></textarea>
+        <button type="submit">submit</button>
+      </form>
+    </section>
 
     <section class="error-view container">
       <h2 class="view-title">There be an issue, cap'n</h2>
@@ -123,7 +124,8 @@
       <p id="book-count"> </p>
       <h2 class="view-title">My Books</h2>
       <section class="book-list">
-        <ul id="book-list"></ul>      </section>
+        <ul id="book-list"></ul>      
+      </section>
     </section>
 
     <section class="detail-view container">
@@ -137,7 +139,7 @@
           <input type="number" name="passphrase" placeholder="1234">
           <button type="submit">verify</button>
         </form>
-      </section>
+    </section>
 
     <div class="about-view ">
       <h2> About Me </h2>
@@ -145,7 +147,7 @@
       <h2> About Application </h2>
       <p id="about-application"> This page shows booklist </p>
     </div>
-
+    
   </main>
   <footer>
     <aside class="social-links">

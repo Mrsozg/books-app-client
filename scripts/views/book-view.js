@@ -67,35 +67,34 @@ var app = app || {};
         description: event.target.description.value,
       };
       module.Book.update(book, book.book_id);
-    })
-
+    });
   }
 
-  bookView.initSearchFormPage = function() {
-    resetView();
+  bookView.initSearchFormPage = () => {
+    $('.container').hide();
     $('.search-view').show();
     $('#search-form').on('submit', function(event) {
       event.preventDefault();
-
       let book = {
         title: event.target.title.value || '',
         author: event.target.author.value || '',
         isbn: event.target.isbn.value || '',
       };
-
       module.Book.find(book, bookView.initSearchResultsPage);
-
       event.target.title.value = '';
       event.target.author.value = '';
       event.target.isbn.value = '';
-    })
+    });
   }
 
-  bookView.initSearchResultsPage = function() {
-    resetView();
+  bookView.initSearchResultsPage = () => {
+    console.log("SEARCH RESULTS");
+    $('.container').hide();
     $('.search-results').show();
     $('#search-list').empty();
-    module.Book.all.map(book => $('#search-list').append(book.toHtml()));
+    console.log(module.Book.all);
+    module.Book.all.map(book => $('#search-list').append(book.toHtml("book-list-template")));
+
     $('.detail-button a').text('Add to list').attr('href', '/');
     $('.detail-button').on('click', function(e) {
       module.Book.findOne($(this).parent().parent().parent().data('bookid'))
