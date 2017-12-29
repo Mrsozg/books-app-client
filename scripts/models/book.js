@@ -72,6 +72,12 @@ var __API_URL__ = 'http://localhost:3000';
     .catch(errorCallback)
   }
 
+  Book.find = (book, callback) =>{
+  $.get(`${__API_URL__}/api/v1/books/find`, book)
+    .then(Book.loadAll)
+    .then(callback)
+    .catch(errorCallback)
+  }
 
   module.Book = Book;
 })(app)

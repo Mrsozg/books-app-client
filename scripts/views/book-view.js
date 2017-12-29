@@ -71,6 +71,37 @@ var app = app || {};
 
   }
 
+  bookView.initSearchFormPage = function() {
+    resetView();
+    $('.search-view').show();
+    $('#search-form').on('submit', function(event) {
+      event.preventDefault();
+
+      let book = {
+        title: event.target.title.value || '',
+        author: event.target.author.value || '',
+        isbn: event.target.isbn.value || '',
+      };
+
+      module.Book.find(book, bookView.initSearchResultsPage);
+
+      event.target.title.value = '';
+      event.target.author.value = '';
+      event.target.isbn.value = '';
+    })
+  }
+
+  bookView.initSearchResultsPage = function() {
+    resetView();
+    $('.search-results').show();
+    $('#search-list').empty();
+    module.Book.all.map(book => $('#search-list').append(book.toHtml()));
+    $('.detail-button a').text('Add to list').attr('href', '/');
+    $('.detail-button').on('click', function(e) {
+      module.Book.findOne($(this).parent().parent().parent().data('bookid'))
+    });
+  }
+
 
   module.bookView = bookView;
 })(app)
