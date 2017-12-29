@@ -55,10 +55,10 @@
     </section>
     <section class=“menu”>
         <ul>
-          <a href="/"><li>View All Book</li></a>
-          <a href="/new"><li>Add A New Book</li></a>
+          <li> <a href="/">View All Book </a></li>
+          <li class="admin"><a href="/new"> Add A New Book </a> </li>
+          <li><a href="/admin">login</a></li>
         </ul>
-
     </section>
   </header>
   <main>
@@ -103,6 +103,14 @@
       <section id="detail-desc"></section>
     </section>
 
+    <section class="admin-view container">
+        <h2 class="view-title">verify your passphrase</h2>
+        <form id="admin-form">
+          <input type="number" name="passphrase" placeholder="1234">
+          <button type="submit">verify</button>
+        </form>
+      </section>
+
     <div class="about-view ">
       <h2> About Me </h2>
       <p id="about-me"> this page made by ozge boyraz and Jordan Lesaca </p>
@@ -131,6 +139,7 @@
   <script src="./scripts/models/book.js" type="text/javascript"></script>
   <script src="./scripts/views/book-view.js" type="text/javascript"></script>
   <script src="./scripts/views/error-view.js" type="text/javascript"></script>
+  <script src="./scripts/views/admin-view.js" type="text/javascript"></script>
   <script src="./scripts/views/routes.js" type="text/javascript"></script>
 
 </body>
